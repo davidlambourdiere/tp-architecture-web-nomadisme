@@ -13,8 +13,6 @@ import java.util.ArrayList;
 
 @Path("/bikes")
 public class BikeResource {
-    ArrayList<Bike> bikes = new ArrayList<>();
-
     @Inject
     @GrpcService("owner")
     OwnerGrpc.OwnerBlockingStub ownerGrpcService;
@@ -22,6 +20,7 @@ public class BikeResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public ArrayList<Bike> getAllBikes(){
+        ArrayList<Bike> bikes = new ArrayList<>();
         // BIKE 1
         String ownerName= ownerGrpcService.getOwnerName(
                 OwnerNameRequest.newBuilder()
