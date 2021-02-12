@@ -15,5 +15,6 @@
 
     <modules>
         <module>bike-quarkus</module>
+        <module>owner-quarkus</module>
     </modules>
 </project>

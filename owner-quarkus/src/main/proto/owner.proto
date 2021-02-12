@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package com.memda;
+
+option java_multiple_files = true;
+option java_package = "com.memda";
+
+service Owner{
+  rpc GetOwnerName(OwnerNameRequest) returns (OwnerNameRequest){}
+}
+
+message OwnerNameRequest{
+  string ine = 1;
+}
+
+message OwnerNameReply{
+  string name = 1;
+}
